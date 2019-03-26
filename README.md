@@ -2,6 +2,8 @@
 
 ## Overview
 
+This repo allows to test the vulnerability of (black-box) models via random search and evolution search over arbitrary transformation sets, and train more robust models via the RDA/RSDA/ESDA algorithms introduce in the paper. The current verions only allows to train and test MNIST models, I am currently in the process of cleaning up code for the other experiments.
+
 ### Files
 
 ``model.py``: to build tf's graph
