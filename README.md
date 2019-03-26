@@ -6,7 +6,11 @@
 
 ``model.py``: to build tf's graph
 
-``train_ops.py``: to train/test
+``train_ops.py``: train/test functions
+
+``search_ops.py``: search algos (RS/ES from the paper)
+
+``transformations_ops.py``: modules to build image transformation set and apply transformations
 
 ``exp_configuration``: config file with the hyperparameters
 
