@@ -1,0 +1,29 @@
+[EXPERIMENT_SETTINGS]
+
+source_dataset = mnist
+
+[MODEL_SETTINGS]
+# number of classes
+no_classes = 10
+# number of color channels
+no_channels = 3
+# size of the images
+img_size = 32
+
+[MAIN_SETTINGS]
+
+# training iterations
+train_iters = 40001
+# number of samples in each batch
+batch_size = 32
+# learning rate
+learning_rate = 0.0001
+# string that defines the transformations and their level ('random_N' gives N random transformations)
+transf_string = random_0
+string_length = 0
+# number of iterations between each random search phase
+sub_train_iters = 10000
+# number of transformations strings analyzed during random search
+no_search_strings = 100
+
+

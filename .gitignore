@@ -1,0 +1,9 @@
+data/
+model/
+logs/
+images/
+*.pyc
+*.png
+*.py.swp
+*.pkl
+*.txt
