@@ -19,8 +19,8 @@ flags.DEFINE_string('seed', '123', "Random seed")
 flags.DEFINE_string('transf_string_length', '5', "Number of transformations to be concatenated")
 
 flags.DEFINE_string('search_no_iters', '100', "Number of search iterations")
-flags.DEFINE_string('GA_pop_size', '10', "Number of individuals in the population -- for evolution search")
-flags.DEFINE_string('GA_mutation_rate', '0.1', "Mutation rate -- for evolution search")
+flags.DEFINE_string('pop_size', '10', "Number of individuals in the population -- for evolution search")
+flags.DEFINE_string('mutation_rate', '0.1', "Mutation rate -- for evolution search")
 FLAGS = flags.FLAGS
 
 def main(_):
@@ -75,7 +75,7 @@ def main(_):
 		print 'Evolution search'
 		tr_ops.load_exp_config()
 		tr_ops.test_evolution_search(run=str(FLAGS.run), seed=int(FLAGS.seed), no_iters=int(FLAGS.search_no_iters),string_length=int(FLAGS.transf_string_length), 
-										pop_size=int(FLAGS.GA_pop_size), mutation_rate=float(FLAGS.GA_mutation_rate))
+										pop_size=int(FLAGS.pop_size), mutation_rate=float(FLAGS.mutation_rate))
 
 if __name__ == '__main__':
 	tf.app.run()
