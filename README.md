@@ -14,7 +14,9 @@ The code in this repo allows to test the vulnerability of (black-box) models via
 
 ``transformations_ops.py``: modules to build image transformation set and apply transformations
 
-``exp_configuration``: config file with the hyperparameters
+``exp_config``: config file with the hyperparameters
+
+Some pretrained models are included in the ''pretrained-models'' folder, with the associated ``exp_config`` files.
 
 ### Prerequisites
 
