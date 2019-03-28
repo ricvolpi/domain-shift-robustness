@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repo allows to test the vulnerability of (black-box) models via random search and evolution search over arbitrary transformation sets, and train more robust models via the RDA/RSDA/ESDA algorithms introduce in the paper. The current verions only allows to train and test MNIST models, I am cleaning up the code for the other experiments.
+The code in this repo allows to test the vulnerability of (black-box) models via random search and evolution search over arbitrary transformation sets, and train more robust models via the RDA/RSDA/ESDA algorithms presented in the paper. The current version only allows to train/test MNIST models, the rest of the code will be released ASAP.
 
 ### Files
 
