@@ -85,19 +85,13 @@ class SearchOps(object):
 				conc_images=np.vstack((np.hstack((tr_images[i]*255. for i in range(j*20, (j+1)*20))) for j in range(10)))
 				all_images.append(conc_images)
 
-				PIL.Image.fromarray(conc_images.astype('uint8')).save(save_file_name+'.png')
+
+		print('Saving output in "images" folder')
+		PIL.Image.fromarray(conc_images.astype('uint8')).save(save_file_name+'_acc_%.3f.png'%(current_minimum))
 				
-				with open(save_file_name+'.pkl', 'wb') as f:
-					cPickle.dump((all_accuracies, all_best_accuracies, all_transformations, all_levels, number_fitness_evals), f, cPickle.HIGHEST_PROTOCOL)
-
-			if (t%100) == 0:
-				with open(save_file_name+'.pkl', 'wb') as f:
-					cPickle.dump((all_accuracies, all_best_accuracies, all_transformations, all_levels, number_fitness_evals), f, cPickle.HIGHEST_PROTOCOL)
-
-
-		with open(save_file_name+'.pkl', 'wb') as f:
+		with open(save_file_name+'_acc_%.3f.pkl'%(current_minimum), 'wb') as f:
 			cPickle.dump((all_accuracies, all_best_accuracies, all_transformations, all_levels, number_fitness_evals), f, cPickle.HIGHEST_PROTOCOL)
-		
+
 		return all_best_accuracies[-1], all_transformations[-1].tolist(), all_levels[-1], all_images[-1]
 			
 	def genetic_algorithm(self, no_iters, pop_size, string_length, mutation_rate, save_file_name, compute_fitness_f, original_images, *args):
@@ -177,12 +171,6 @@ class SearchOps(object):
 		min_levels.append(pop_levels[np.argmin(pop_accuracies)])
 		min_images.append(pop_images[np.argmin(pop_accuracies)])
 
-
-		with open(save_file_name+'.pkl', 'wb') as f:
-			cPickle.dump((min_accs,min_transfs, min_levels, number_fitness_evals, all_fitnesses), f, cPickle.HIGHEST_PROTOCOL)
-
-		PIL.Image.fromarray(np.squeeze(min_images[0]).astype('uint8')).save(save_file_name+'.png')
-	
 		print 'Running evolution search'
 
 		for step in range(no_iters): # number of iters for the evolution search
@@ -262,7 +250,6 @@ class SearchOps(object):
 			pop_levels = new_pop_levels
 			pop_accuracies = new_pop_accuracies
 
-
 			pop_images = new_pop_images
 			pop_probabilities = (1. - np.array(pop_accuracies))/np.sum(1. - np.array(pop_accuracies)) 
 
@@ -279,14 +266,12 @@ class SearchOps(object):
 				min_levels.append(pop_levels[np.argmin(pop_accuracies)])
 				min_images.append(pop_images[np.argmin(pop_accuracies)])
 
-				PIL.Image.fromarray(pop_images[np.argmin(pop_accuracies)].astype('uint8')).save(save_file_name+'.png')
 				
-				with open(save_file_name+'.pkl', 'wb') as f:
-					cPickle.dump((min_accs,min_transfs, min_levels, number_fitness_needed, all_fitnesses), f, cPickle.HIGHEST_PROTOCOL)
-						
 			all_fitnesses.append(current_minimum)
 
-		with open(save_file_name+'.pkl', 'wb') as f:
+		PIL.Image.fromarray(pop_images[np.argmin(pop_accuracies)].astype('uint8')).save(save_file_name+'_acc_%.3f.png'%(current_minimum))
+		
+		with open(save_file_name+'_acc_%.3f.pkl'%(current_minimum), 'wb') as f:
 			cPickle.dump((min_accs,min_transfs, min_levels, number_fitness_needed, all_fitnesses), f, cPickle.HIGHEST_PROTOCOL)
 
 		return min_accs[np.argmin(min_accs)], min_transfs[np.argmin(min_accs)], min_levels[np.argmin(min_accs)], min_images[np.argmin(min_accs)]
