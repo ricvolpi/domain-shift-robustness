@@ -14,7 +14,9 @@ The code in this repo allows to test the vulnerability of (black-box) models via
 
 ``transformations_ops.py``: modules to build image transformation set and apply transformations
 
-``exp_configuration``: config file with the hyperparameters
+``exp_config``: config file with the hyperparameters
+
+Some pretrained models are included in the ''pretrained-models'' folder, with the associated ``exp_config`` files.
 
 ### Prerequisites
 
@@ -33,7 +35,7 @@ sh download_svhn.sh
 To train the model, run
 
 ```
-python main.py --mode=train_MODE --gpu=GPU_IDX -- exp_dir=EXP_DIR
+python main.py --mode=train_MODE --gpu=GPU_IDX --exp_dir=EXP_DIR
 ```
 where MODE can be one of {ERM, RDA, RSDA, ESDA}, GPU_IDX is the index of the GPU to be used, and EXP_DIR is the folder containing the exp_config file.
 
@@ -41,19 +43,19 @@ where MODE can be one of {ERM, RDA, RSDA, ESDA}, GPU_IDX is the index of the GPU
 To run evolution search (ES) or random search (RS) on a trained model, run
 
 ```
-python main.py --mode=test_MODE --gpu=GPU_IDX -- exp_dir=EXP_DIR
+python main.py --mode=test_MODE --gpu=GPU_IDX --exp_dir=EXP_DIR
 ```
 where MODE can be one of {RS, ES}. For ES, population size POP_SIZE and mutation rate ETA can be set as
  
 ```
-python main.py --mode=test_ES --gpu=GPU_IDX -- exp_dir=EXP_DIR --pop_size=POP_SIZE --mutation_rate=ETA
+python main.py --mode=test_ES --gpu=GPU_IDX --exp_dir=EXP_DIR --pop_size=POP_SIZE --mutation_rate=ETA
 ```
 
 ##
 To test performance on all digit datasets (MNIST, SVHN, MNIST-M, SYN, USPS), run
 
 ```
-python main.py --mode=test_all --gpu=GPU_IDX -- exp_dir=EXP_DIR
+python main.py --mode=test_all --gpu=GPU_IDX --exp_dir=EXP_DIR
 ```
 MNIST-M, SYN and USPS testing are currently commented out, uncomment them when you have downloaded the datasets. Loading code is included in train_ops.py.
 
