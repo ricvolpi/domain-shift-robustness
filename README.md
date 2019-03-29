@@ -1,4 +1,4 @@
-# Code for the paper [Model Vulnerability over Image Transformation Sets](https://github.com/ricvolpi/domain-shift-robustness)
+# Code for the paper [Model Vulnerability to Distributional Shifts over Image Transformation Sets](https://arxiv.org/abs/1903.11900)
 
 ## Overview
 
