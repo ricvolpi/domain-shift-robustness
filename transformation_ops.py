@@ -1,11 +1,3 @@
-# Module to apply image/dataset transformations (D -> T_a{D} = D_a)
-#
-# Each transformation takes in input an RGB image and gives in output
-# an RGB image. Grayscale images are handled as RGB images (replicated
-# channels).
-
-########################################################################
-
 import os
 import numpy as np
 import numpy.random as npr
@@ -227,60 +219,7 @@ class TransfOps(object):
 			self.code_to_level_dict['Benhancer']['l10_'+str(n)] = l
 
 if __name__=='__main__':
-
-	data_dir = './data'	
-
-	# loading 32x32 MNIST
-	image_dir = os.path.join(data_dir, 'mnist', 'train.pkl')
-	with open(image_dir, 'rb') as f:
-	    mnist = cPickle.load(f)
-	
-	print('Loaded MNIST')
-
-	images = mnist['X'] 
-	labels = mnist['y']
-
-	import scipy.io
-	data = scipy.io.loadmat('/data/rvolpi/svhn/test_32x32.mat')
-	images = data['X']
-	labels = data['y']
-	images = np.transpose(images, (3,0,1,2))
-
-	
-
-	images = images[:10]
-	labels = labels[:10]
-
-	# grayscale to rgb
-	# images = np.squeeze(np.stack((images,images,images), axis=3))
-	
-	# object to handle dataset transformations
-	tr_ops = TransfOps()	
-	print('Created TransfOps object')
-	
-	# defining a transformation string
-	#tr_string = 't0,l0_0' #identity function
-	#tr_string = 't0,l0_0,t1,l1_2'
-
-	trs=['Renhancer', 'solarize']
-	lvls=[100, 0.1]
-
-	# transforming MNIST dataset
-	print('Applying transformations...')
-	tr_images, transformations, levels = tr_ops.transform_dataset(images, transformations=trs, levels=lvls)
-	print('Done!')
-
-	print('Saving images')
-	PIL.Image.fromarray(images[0].astype('uint8')).save('img_original.png')
-	PIL.Image.fromarray(tr_images[0].astype('uint8')).save('img_modified.png')
-
-	print('Saving transformations')
-	ofile = open('used_transformations.txt','w')
-	ofile.write('_'.join(transformations))
-	ofile.write('\n')
-	ofile.write('_'.join([str(l) for l in levels]))
-	ofile.close()
-
+	pass
 
 
 
