@@ -61,7 +61,7 @@ MNIST-M, SYN and USPS testing are currently commented out, uncomment them when y
 
 ##
 
-If one desires to include more transformations, or explore different magnitude ranges of the provided one, modifications to transformations_ops.py should be straightforward. Please, let me know if anything doesn't work, or if you have any useful feedback! 
+If one desires to include more transformations, or explore different magnitude ranges of the provided one, modifications to transformations_ops.py should be straightforward. 
 
 
 
