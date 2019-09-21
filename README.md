@@ -1,4 +1,4 @@
-# Code for the paper [Model Vulnerability to Distributional Shifts over Image Transformation Sets](https://arxiv.org/abs/1903.11900)
+# Code for the paper [Addressing Model Vulnerability to Distributional Shifts over Image Transformation Sets](https://arxiv.org/abs/1903.11900)
 
 ## Overview
 
