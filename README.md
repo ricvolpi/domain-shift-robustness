@@ -72,7 +72,7 @@ If one desires to include more transformations, or explore different intensity i
 ## Reference
 
 **Addressing Model Vulnerability to Distributional Shifts over Image Transformation Sets**  
-Riccardo Volpi and Vittorio Murino
+Riccardo Volpi and Vittorio Murino, ICCV 2019
 ```
     @InProceedings{Volpi_2019_ICCV,
     author = {Volpi, Riccardo and Murino, Vittorio},
