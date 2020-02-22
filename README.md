@@ -1,4 +1,4 @@
-# Code for the paper [Addressing Model Vulnerability to Distributional Shifts over Image Transformation Sets](https://arxiv.org/abs/1903.11900)
+# Code for the paper [Addressing Model Vulnerability to Distributional Shifts over Image Transformation Sets](http://openaccess.thecvf.com/content_ICCV_2019/html/Volpi_Addressing_Model_Vulnerability_to_Distributional_Shifts_Over_Image_Transformation_Sets_ICCV_2019_paper.html)
 
 ## Overview
 
@@ -67,9 +67,21 @@ MNIST-M, SYN and USPS testing are currently commented out, uncomment them when y
 
 ##
 
-If one desires to include more transformations, or explore different magnitude ranges of the provided one, modifications to transformations_ops.py should be straightforward. 
+If one desires to include more transformations, or explore different intensity intervals, modifications to transformations_ops.py should be straightforward. 
 
+## Reference
 
+**Addressing Model Vulnerability to Distributional Shifts over Image Transformation Sets**  
+Riccardo Volpi and Vittorio Murino
+```
+    @InProceedings{Volpi_2019_ICCV,
+    author = {Volpi, Riccardo and Murino, Vittorio},
+    title = {Addressing Model Vulnerability to Distributional Shifts Over Image Transformation Sets},
+    booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
+    month = {October},
+    year = {2019}
+    }
+```
 
 
  
