@@ -22,7 +22,7 @@ Here a small ConvNet and the MNIST dataset are used, but applying these tools to
 
 ``exp_config``: config file with the hyperparameters
 
-Some pretrained models are included in the ''pretrained-models'' folder, with the associated ``exp_config`` files.
+Some pretrained models are available in a [heavier version](https://github.com/ricvolpi/domain-shift-robustness-models) of this repo.
 
 ### Prerequisites
 
