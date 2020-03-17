@@ -1,2 +1,0 @@
-model_checkpoint_path: "/data/rvolpi/experiments/evolution-transform/mnist/ga-1M/model/7/encoder"
-all_model_checkpoint_paths: "/data/rvolpi/experiments/evolution-transform/mnist/ga-1M/model/7/encoder"
